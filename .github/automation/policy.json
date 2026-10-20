@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "upstream_repository": "Huxpro/huxblog-boilerplate",
+  "upstream_branch": "master",
+  "default_branch": "master",
+  "sync_branch": "sync-only/upstream-master",
+  "release_source": "none-recognized",
+  "automatic_publish": false,
+  "historical_backfill": false,
+  "preserve_local_workflows": true,
+  "manual_workflows": [
+    "jekyll-gh-pages.yml",
+    "site-promote.yml",
+    "jekyll-docker.yml"
+  ],
+  "publication_note": "No automatic publisher is configured; manual workflows never bypass provenance, source, license or compatibility checks.",
+  "site_build_workflow": "jekyll-gh-pages.yml"
+}
