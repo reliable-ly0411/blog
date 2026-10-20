@@ -55,5 +55,13 @@ class PolicyTests(unittest.TestCase):
         self.assertNotIn('-X ', script)
 
 
+    def test_jekyll_revision_matches_the_requested_source(self):
+        path = ROOT / '.github/workflows/jekyll-gh-pages.yml'
+        d = yaml.load(path.read_text(), Loader=yaml.BaseLoader)
+        steps = d['jobs']['build']['steps']
+        builder = next(s for s in steps if s.get('uses') == 'actions/jekyll-build-pages@v1')
+        self.assertEqual(builder['with']['build_revision'], '${{ inputs.source_sha }}')
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -30,6 +30,7 @@ jobs:
         with:
           source: ./
           destination: ./_site
+          build_revision: ${{ inputs.source_sha }}
       - name: Package original site bytes and provenance
         env:
           SOURCE_SHA: ${{ inputs.source_sha }}
